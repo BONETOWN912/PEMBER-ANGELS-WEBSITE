@@ -1,0 +1,331 @@
+/* ===== GENERAL PAGE STYLING ===== */
+body {
+  font-family: Arial, sans-serif; /* Main font for the page */
+  margin: 0;
+  padding: 0;
+  background: #fef9f4; /* Light beige background */
+  color: #333; /* Dark text */
+}
+
+/* ===== NAVIGATION BAR ===== */
+nav {
+  background-color: #6ed061; /* Green background */
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* Slight shadow */
+}
+
+nav a {
+  margin: 10px;
+  text-decoration: none;
+  color: #ffffff; /* White text */
+  font-weight: bold;
+  background: #6179ff; /* Blue button background */
+  padding: 8px 12px;
+  border-radius: 6px;
+}
+
+nav a:hover {
+  background: #730f91; /* Purple hover effect */
+}
+
+/* ===== PAGE SECTIONS ===== */
+section {
+  padding: 30px;
+  display: none; /* Hidden by default */
+  background-color: #fff0f5; /* Light pink background */
+  border-top: 3px solid #2bfef3; /* Teal top border */
+}
+
+section.active {
+  display: block; /* Show when active */
+}
+
+/* ===== BUTTONS ===== */
+button {
+  padding: 10px 15px;
+  margin-top: 10px;
+  background-color: #260086; /* Dark purple */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #125e66; /* Dark teal on hover */
+}
+
+/* ===== FORM FIELDS ===== */
+input, select, textarea {
+  width: 100%;
+  padding: 8px;
+  margin: 8px 0;
+  border: 1px solid #ff00ee; /* Pink border */
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+/* ===== HEADINGS ===== */
+h2 {
+  color: #008056; /* Green headings */
+}
+
+/* ===== LISTS ===== */
+ul li {
+  margin-bottom: 10px;
+}
+
+label {
+  font-weight: bold;
+  color: #b72078; /* Deep pink labels */
+}
+
+small {
+  color: #888; /* Grey small text */
+}
+
+/* ===== TABLES ===== */
+table, td, th {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 8px;
+}
+
+td {
+  min-width: 150px;
+}
+
+/* ===== STATUS MESSAGES ===== */
+.error {
+  color: red;
+  font-weight: bold;
+}
+
+.success {
+  color: green;
+  font-weight: bold;
+}
+
+/* ===== GENERAL PARAGRAPH BOX ===== */
+p {
+  background-color: lightblue;
+  padding: 10px;
+  border: 1px solid blue;
+}
+
+/* ===== PRICING SECTION ===== */
+.pricing-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+/* ===== LEFT & RIGHT PRICING BOXES ===== */
+.left-pricing, .right-pricing {
+  flex: 1;
+  min-width: 300px;
+  background-color: #fff0f5; /* Light pink */
+  border: 1px solid #6179ff; /* Blue border */
+  border-top: 3px solid #2bfef3; /* Teal top */
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.left-pricing h2, .right-pricing h2 {
+  color: #008056;
+  margin-top: 0;
+}
+
+.left-pricing h3, .right-pricing h3 {
+  margin-top: 15px;
+  color: #730f91;
+}
+
+.left-pricing ul, .right-pricing ul, 
+.left-pricing li, .right-pricing li {
+  margin: 8px 0;
+  padding-left: 20px;
+}
+
+.left-pricing li, .right-pricing li {
+  list-style-type: disc;
+}
+
+/* ===== FIXED BOTTOM-RIGHT FORM ===== */
+.bottom-right-form {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #fff0f5;
+  border: 1px solid #6179ff;
+  border-top: 3px solid #2bfef3;
+  border-radius: 8px;
+  padding: 20px;
+  width: 250px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  z-index: 1000;
+}
+
+.bottom-right-form label {
+  display: block;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.bottom-right-form button {
+  margin-top: 12px;
+  width: 100%;
+  padding: 8px;
+  background-color: #4CAF50; /* Green */
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.bottom-right-form button:hover {
+  background-color: #45a049;
+}
+
+.bottom-right-form h2 {
+  color: #008056;
+}
+
+/* ===== GRID CONTENT LAYOUT ===== */
+.content-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /* 3 columns */
+  gap: 20px;
+  padding: 20px;
+}
+
+.about, .image, .service, .goals {
+  background-color: #fff0f5;
+  padding: 20px;
+  border-top: 3px solid #2bfef3;
+  border: 1px solid #6179ff;
+  border-radius: 8px;
+  text-align: justify; /* Makes text aligned evenly */
+}
+
+/* ===== MOBILE ADJUSTMENTS ===== */
+@media only screen and (max-width: 575px) {
+  .links, .highschool, .college {
+    float: none;
+    width: 90%;
+    margin: 10px auto;
+  }
+  .links {
+    height: 200px;
+  }
+}
+
+.red-text {
+  color: red;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+}
+
+@media only screen and (max-width: 575px) {
+  nav {
+    padding: 10px 5px;
+    text-align: left;
+  }
+  nav a {
+    display: block;
+    margin: 8px 0;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .content-layout {
+    grid-template-columns: 1fr; /* Stack columns */
+  }
+  .about, .image, .service, .goals {
+    margin-bottom: 20px; /* Space between sections */
+  }
+}
+
+/* ===== VERTICAL FORM TABLE STYLING ===== */
+.vertical-table {
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+  border-collapse: collapse;
+}
+
+.vertical-table td {
+  padding: 8px;
+  vertical-align: top;
+}
+
+.vertical-table label {
+  font-weight: bold;
+  display: block; /* Forces label on top */
+}
+
+.vertical-table input,
+.vertical-table select,
+.vertical-table textarea,
+.vertical-table button {
+  width: 100%;
+  padding: 8px;
+  font-size: 1em;
+  box-sizing: border-box;
+}
+
+.vertical-table textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+.vertical-table button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.vertical-table button:hover {
+  background-color: #45a049;
+}
+
+.vertical-table select {
+  width: 100%;
+  padding: 8px;
+  font-size: 1em;
+  box-sizing: border-box;
+}
+
+/* ===== MOBILE CALCULATOR SIZE ADJUSTMENT ===== */
+@media (max-width: 600px) {
+  .bottom-right-form {
+    position: static;       /* Removes fixed position on mobile */
+    max-width: 90%;         /* Shrinks width */
+    margin: 20px auto;      /* Centers form */
+    padding: 10px;          /* Less padding */
+    font-size: 14px;        /* Smaller text */
+  }
+
+  .bottom-right-form input,
+  .bottom-right-form select,
+  .bottom-right-form button {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .bottom-right-form h2 {
+    font-size: 18px;
+  }
+
+  .bottom-right-form h3 {
+    font-size: 16px;
+  }
+}

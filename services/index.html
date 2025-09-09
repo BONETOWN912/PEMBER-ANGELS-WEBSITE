@@ -49,19 +49,27 @@
     <li>Behavioral euthanasia: $550</li>
 
 
-      <h2>Extra Services</h2>
+    <h2>Extra Services</h2>
     <!-- Extra Services list -->
     <li>Weekend: $50</li>
     <li>Holiday: $120</li>
     <li>Seen within 36 hours: $200</li>
     <li>Aggressive pet: $100</li>
-    <h2>Pet Cemeteries</h2>
-    <h3>We can help you find a pet cemetery for burial. Here are some options</h3>
-    <p>Westchester County: Hartsdale canine cemetery 914-949-2583  <a href="https://petcem.com/"> https://petcem.com/</a></p>    
-    <p>Putnam County: Forever Angels Pet Cemetery 845-895-8950 <a href="https://www.foreverangelspetcemetery.com/"> https://www.foreverangelspetcemetery.com/</a></p>
 
 
 
+    <h2>cremation services</h2>
+    <!-- Extra Services list -->
+    <li>Private: $325</li>
+    <li>Communal: $110</li>
+    <p>Cremation services are paid through our partners at Final Gift. An account will be set up on arrival and you will get 72 hours to make final cremation and memorialization decisions</p>
+
+
+    <p>Note: If you choose communal cremation, your pet's remains will be returned to you in a biodegradable urn.</p>
+
+
+
+    
     <h2>Remains transportation fee from your home for cremation based on county</h2>
 
       <li>Westchester - $50</li>
@@ -78,8 +86,17 @@
   <div class="right-pricing">
     <h2>Aftercare services </h2>
     <p> Please consider what you would like to do with the remains prior to the Euthanasia appointment. You will need to tell the staff whether you wish to keep your pet’s body for burial or cremation or have us transport it for cremation with Final Gift.</p>
-    <p>If you choose cremation with Final Gift, please go to their site to look at your options—click here: <a href="https://www.finalgift.com/">https://www.finalgift.com/</a>. In addition to cremation, they offer other services, including viewing and visitation, grief support resources, pet loss preplanning, memorial products, etc. We will help you set up an account with them when we arrive at your home.</p>
+    <p>If you choose cremation with Final Gift, please go to their site to look at your options—click here: <a href="https://www.finalgift.com/memorial-products-new/">https://www.finalgift.com/</a>. In addition to cremation, they offer other services, including viewing and visitation, grief support resources, pet loss preplanning, memorial products, etc. We will help you set up an account with them when we arrive at your home.</p>
     <p>If you wish to bury your pet, please check with local NYS regulations to find a legal place to do so. The pet must be placed in a watertight container and buried 3 to 4 feet deep to avoid scavenging animals digging the body up and ingesting it, particularly as the euthanasia solutions can poison and kill them and harm the environment. If the euthanasia is performed when the ground is frozen, you will need to find a safe storage location to keep the body frozen inside a watertight container until it can be buried. If you wish to have a pet cemetery handle the burial, see some options below.</p>
+    
+
+
+    <h2>Pet Cemeteries</h2>
+    <!-- Pet cemetery at the bottom of after care services -->
+    <h3>We can help you find a pet cemetery for burial. Here are some options</h3>
+    <p>Westchester County: Hartsdale canine cemetery 914-949-2583  <a href="https://petcem.com/"> https://petcem.com/</a></p>    
+    <p>Putnam County: Forever Angels Pet Cemetery 845-895-8950 <a href="https://www.foreverangelspetcemetery.com/"> https://www.foreverangelspetcemetery.com/</a></p>
+
     <!-- Communal cremation price list -->
     <!-- <h3>Communal</h3>
     <ul>
@@ -115,7 +132,7 @@
     <!-- Pet type selection -->
     <label>Pet Type:</label>
     <select id="petType">
-      <option value="">Select</option>
+      <option value="Select">Select</option>
       <option value="cat">Cat</option>
       <option value="small">Small Dog (0-30lbs)</option>
       <option value="medium">Medium Dog (31-60lbs)</option>
@@ -125,18 +142,22 @@
     </select>
 
     <!-- Cremation preference selection -->
-    <label>Cremation Preference:</label>
-    <select id="cremationPref">
-      <option value="">Select</option>
-      <option value="Private">Private</option>
-      <option value="Communal">Communal</option>
+    <label>Cremation remains removal:</label>
+    <select id="cremationRe">
+      <option value="Select">Select</option>
+      <option value="Westchester">Westchester</option>
+      <option value="Putnam">Putnam</option>
+      <option value="Rockland">Rockland</option>
+      <option value="Orange">Orange</option>
       <option value="None">None</option>
     </select>
+
+
     <!-- Extra fees selection form -->
     <h3>Extra Fees (check all that apply)</h3>
 <form id="extraFeesForm">
   <label>
-    Weekend ($50)<br>
+    Weekend (50)<br>
     <input type="checkbox" id="weekend">
   </label>
   

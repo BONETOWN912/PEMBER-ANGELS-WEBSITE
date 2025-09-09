@@ -15,8 +15,11 @@ document.addEventListener("DOMContentLoaded", () => {
   window.calculateTotal = function () {
     // Get pet details from form inputs
     const weight = parseInt(document.getElementById('petWeight').value);
-    const cremation = document.getElementById('cremationPref').value;
+    // const cremation = document.getElementById('cremationRe').value;
     const petType = document.getElementById('petType').value;
+    const cremationRe = document.getElementById('cremationRe').value;
+
+    
 
     // Check optional checkboxes (use "?.checked" in case the element doesn't exist)
     const rush = document.getElementById('rush')?.checked || false;
@@ -43,22 +46,40 @@ document.addEventListener("DOMContentLoaded", () => {
     // Get base price for selected pet type
     let base = euthanasiaPrices[petType];
 
-    // Cremation cost calculation based on type and weight
-    let cremationCost = 0;
-    if (cremation === "Communal") {
-      if (weight <= 25) cremationCost = 100;
-      else if (weight <= 50) cremationCost = 150;
-      else if (weight <= 100) cremationCost = 200;
-      else cremationCost = 250;
-    } else if (cremation === "Private") {
-      if (weight <= 10) cremationCost = 175;
-      else if (weight <= 50) cremationCost = 200;
-      else if (weight <= 80) cremationCost = 250;
-      else if (weight <= 100) cremationCost = 300;
-      else if (weight <= 150) cremationCost = 355;
-      else cremationCost = 425;
-    }
 
+    // let cremationCost = 0;
+    // if (cremation === "Communal") {
+    //   if (weight <= 25) cremationCost = 100;
+    //   else if (weight <= 50) cremationCost = 150;
+    //   else if (weight <= 100) cremationCost = 200;
+    //   else cremationCost = 250;
+    // } else if (cremation === "Private") {
+    //   if (weight <= 10) cremationCost = 175;
+    //   else if (weight <= 50) cremationCost = 200;
+    //   else if (weight <= 80) cremationCost = 250;
+    //   else if (weight <= 100) cremationCost = 300;
+    //   else if (weight <= 150) cremationCost = 355;
+    //   else cremationCost = 425;
+    // }
+    // Euthanasia base prices by pet type
+
+    // const movementPrices = {
+    //   Private: 325,
+    //   Communal: 110,
+    // };
+
+    const movementPrices = {
+      Westchester: 50,
+      Putnam: 75,
+      Rockland: 105,
+      Orange: 110,
+      None: 0,
+    };
+    // Get base price for selected pet type
+    let move = movementPrices[cremationRe];
+
+
+    
     // Calculate extra fees based on selected options
     let extra = 0;
     if (rush) extra += 200;       // Rush appointment fee
@@ -67,7 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (aggressive) extra += 100; // Aggressive pet handling fee
 
     // Calculate subtotal, surcharge (3% card fee), and final total
-    const subtotal = base + cremationCost + extra;
+    const subtotal = base + move + extra;
     const surcharge = subtotal * 0.03; // 3% of subtotal
     const total = subtotal + surcharge;
 
@@ -90,3 +111,30 @@ document.addEventListener("DOMContentLoaded", () => {
 document.querySelector('.nav-toggle').onclick = function() {
   document.querySelector('.nav-links').classList.toggle('active');
 };
+/*
+  Note: JavaScript running in the browser cannot send emails directly for security reasons.
+  To send form submissions to an email address (like example@gmail.com), you need a backend service.
+  You can use services like EmailJS, Formspree, or set up your own server with Node.js and Nodemailer.
+  Below is an example using EmailJS (https://www.emailjs.com/):
+
+  1. Sign up at EmailJS and create an email service/template.
+  2. Replace 'YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', and 'YOUR_USER_ID' with your actual EmailJS credentials.
+  3. Add the EmailJS SDK to your HTML: <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+*/
+
+if (window.emailjs) {
+  emailjs.init('YOUR_USER_ID');
+  const appForm = document.getElementById("applicationForm");
+  if (appForm) {
+    appForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', appForm)
+        .then(() => {
+          alert("Thank you for your application. A member of our team will review this and reach out to you within 48 hours.");
+          appForm.reset();
+        }, (error) => {
+          alert("There was an error sending your application. Please try again later.");
+        });
+    });
+  }
+}

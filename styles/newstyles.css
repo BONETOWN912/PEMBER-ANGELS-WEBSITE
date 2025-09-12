@@ -7,27 +7,7 @@ body {
   color: #333; /* Dark text */
 }
 
-/* ===== NAVIGATION BAR ===== */
-nav {
-  background-color: #6ed061; /* Green background */
-  padding: 15px;
-  text-align: center;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* Slight shadow */
-}
 
-nav a {
-  margin: 10px;
-  text-decoration: none;
-  color: #ffffff; /* White text */
-  font-weight: bold;
-  background: #6179ff; /* Blue button background */
-  padding: 8px 12px;
-  border-radius: 6px;
-}
-
-nav a:hover {
-  background: #730f91; /* Purple hover effect */
-}
 
 /* ===== PAGE SECTIONS ===== */
 section {
@@ -229,19 +209,6 @@ p {
   padding: 0;
 }
 
-@media only screen and (max-width: 575px) {
-  nav {
-    padding: 10px 5px;
-    text-align: left;
-  }
-  nav a {
-    display: block;
-    margin: 8px 0;
-    width: 100%;
-    box-sizing: border-box;
-    text-align: center;
-  }
-}
 
 @media only screen and (max-width: 768px) {
   .content-layout {
@@ -330,6 +297,11 @@ p {
   }
 }
 
+
+
+
+/* ===== NAVIGATION BAR ===== */
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 :root{
   --color-1: #0f4d00;
@@ -344,11 +316,17 @@ html{
   font-size: 12pt;
   font-family: Poppins, Segoe UI, Tahoma, sans-serif;
 }
+
+.logo{
+  z-index: 11;
+}
 nav{
   height: 60px;
+  padding: 15px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* Slight shadow */
   background-color: var(--color-1);
   display: flex;
-  justify-content: flex-end;
+  justify-content: start;
   align-items: center;
 }
 .links-container{
@@ -360,10 +338,14 @@ nav{
 }
 nav a{
   height: 100%;
-  padding: 0 20px;
+  padding: 8px 20px;
+  margin: 10px;
   display: flex;
   align-items: center;
   text-decoration: none;
+  background: #6179ff; /* Blue button background */
+  border-radius: 6px;
+  font-weight: bold;
   color: var(--text-color);
 }
 nav a:hover{
@@ -388,10 +370,12 @@ nav svg{
 
     position: fixed;
     top: 0;
-    right: -100%;
+    left: -100%;
     z-index: 10;
     width: 300px;
 
+    padding-top: 20px;
+    padding-right: 20px;
     background-color: var(--color-1);
     box-shadow: -5px 0 5px rgba(1, 94, 29, 0.25);
     transition: 0.75s ease-out;
@@ -404,18 +388,18 @@ nav svg{
     justify-content: flex-start;
   }
   .open-sidebar-button, .close-sidebar-button{
-    padding: 20px;
+    padding: 10px;
     display: block;
   }
   #sidebar-active:checked ~ .links-container{
-    right: 0;
+    left: 0;
   }
   #sidebar-active:checked ~ #overlay{
     height: 100%;
     width: 100%;
     position: fixed;
     top: 0;
-    left: 0;
+    right: 0;
     z-index: 9;
   }
 }

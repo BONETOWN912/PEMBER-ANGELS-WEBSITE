@@ -46,28 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Get base price for selected pet type
     let base = euthanasiaPrices[petType];
 
-
-    // let cremationCost = 0;
-    // if (cremation === "Communal") {
-    //   if (weight <= 25) cremationCost = 100;
-    //   else if (weight <= 50) cremationCost = 150;
-    //   else if (weight <= 100) cremationCost = 200;
-    //   else cremationCost = 250;
-    // } else if (cremation === "Private") {
-    //   if (weight <= 10) cremationCost = 175;
-    //   else if (weight <= 50) cremationCost = 200;
-    //   else if (weight <= 80) cremationCost = 250;
-    //   else if (weight <= 100) cremationCost = 300;
-    //   else if (weight <= 150) cremationCost = 355;
-    //   else cremationCost = 425;
-    // }
-    // Euthanasia base prices by pet type
-
-    // const movementPrices = {
-    //   Private: 325,
-    //   Communal: 110,
-    // };
-
+    
     const movementPrices = {
       Westchester: 50,
       Putnam: 75,

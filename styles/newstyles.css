@@ -1,9 +1,10 @@
 /* ===== GENERAL PAGE STYLING ===== */
 :root{
+  --header-color: hsl(160, 100%, 20%);
   --color-1: #0f4d00;
   --text-color: #f0f0f0;
   --accent-color: #006aff;
-
+  --color-nav: hsl(0, 0%, 50%);
   --color-bg-dark: hsl(0, 0%, 90%);
   --color-bg: hsl(0, 0%, 95%);
   --color-bg-light: hsl(0, 0%, 100%);
@@ -84,7 +85,7 @@ h2,
 .h2 {
   font: var(--h2);
   /* color: #008056;  */
-  color: hsl(160, 100%, 25%)
+  color: var(--header-color);
 }
 h3,
 .h3 {
@@ -462,12 +463,12 @@ nav{
 }
 nav a{
   height: 100%;
-  padding: 18px 20px;
+  padding: 23px 20px;
   margin: 10px;
   display: flex;
   align-items: center;
   text-decoration: none;
-  background: #6179ff; /* Blue button background */
+  background: var(--color-nav); /* Blue button background */
   border-radius: 6px;
   font-weight: bold;
   color: var(--text-color);

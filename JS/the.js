@@ -1,5 +1,3 @@
-
-
 // Function to switch between visible sections on the page
 function showSection(id) {
   // Hide all sections
@@ -12,21 +10,17 @@ function showSection(id) {
 
 // Run this code only after the DOM (HTML content) is fully loaded
 document.addEventListener("DOMContentLoaded", () => {
-
-  // Find the checkbox element darkmode-active
-  const themeToggle = document.getElementById('darkmode-active');
-  // Add a check to be extra safe
-  if (themeToggle) {
-    themeToggle.addEventListener('change', function() {
-      console.log("toggle dark mode")
-      document.body.classList.toggle('dark-mode');
-    });
+  
+  const calculateBtn = document.getElementById('calc-price');
+  if (calculateBtn) {
+  calculateBtn.onclick = function() {
+    console.log("Calculating price...")
   }
-
+}
   // Price calculator function (attached to the window object so it can be used from HTML)
   window.calculateTotal = function () {
     // Get pet details from form inputs
-    const weight = parseInt(document.getElementById('petWeight').value);
+    const weight = parseInt(document.getElementById('pet-weight').value);
     // const cremation = document.getElementById('cremationRe').value;
     const petType = document.getElementById('petType').value;
     const cremationRe = document.getElementById('cremationRe').value;
@@ -99,9 +93,12 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // Simple mobile navigation toggle (show/hide menu)
-document.querySelector('.nav-toggle').onclick = function() {
-  document.querySelector('.nav-links').classList.toggle('active');
-};
+const navToggle = document.querySelector('.nav-toggle');
+if (navToggle) {
+  navToggle.onclick = function() {
+    document.querySelector('.nav-links').classList.toggle('active');
+  };
+}
 /*
   Note: JavaScript running in the browser cannot send emails directly for security reasons.
   To send form submissions to an email address (like example@gmail.com), you need a backend service.

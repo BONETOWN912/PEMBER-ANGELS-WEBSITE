@@ -1,4 +1,5 @@
 /* ===== GENERAL PAGE STYLING ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 /* light mode defualt colors */
 :root{
   --header-color:   hsl(108, 100%, 15%);
@@ -153,53 +154,6 @@ button {
 }
 
 
-/* Make the first card span two columns */
-.main-section > :nth-child(4) {
-  grid-area: 1 / 2 / 4 / 2;
-}
-/* .main-section > :nth-child(4) {
-  grid-column: 1 / span 2;
-} */
-
-.survey-intro p, .welcome p, .service p, .application p{
-  margin-top: 10px;
-}
-
-
-.main-section {
-  margin-top: 1rem;
-  display: grid;
-  /* Two columns of equal width */
-  grid-template-columns: 1fr 1fr; 
-  grid-template-rows: .8fr .6fr .4fr;   
-  /* grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); */
-  width: 95%;
-  gap: 2rem;
-  padding: 1.5rem 2rem;
-  place-self: center;
-}
-
-#child-card {
-  background: var(--color-card);
-  padding: 1.5rem;
-  border-radius: 1rem;
-  border: var(--border-card);
-  border-top: solid 1px var(--highlight);
-  box-shadow: var(--shadow);
-}
-
-.owner > :nth-child(1) {
-  grid-column: 1 / span 2;
-}
-.owner{
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: .1fr 1fr;
-  gap: 1rem;
-  justify-content: center;
-}
-
-
 .modern-btn {
   /* 1. Layout & Sizing */
   display: inline-block; /* Essential for <a> tags */
@@ -254,55 +208,6 @@ footer a:hover{
 }
 
 
-/* emergency page */
-.emergency-section{
-  margin-top: 1rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: flex-start;
-  padding-left: 0px;
-  justify-content: space-between;
-  align-items: center;
-}
-
-/* application page */
-.app{
-  display: flex;
-  justify-content: center;
-  padding: 1rem;
-}
-.application p{
-  margin-top: 10px;
-}
-
-.application a{
-  color: var(--link-color);
-}
-
-.application a:hover{
-  color: var(--link-color-hover);
-  text-decoration: underline;
-}
-
-.quality-body{
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.service-body > :nth-child(1) {
-  grid-area: 1 / 1 / 1 / 3;
-}
-.service-body{  
-  padding: 1rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr; 
-  grid-template-rows: .25fr 1fr;  
-  gap: 1rem;
-}
 /* 
 #child {
   flex: 0 1 auto;
@@ -319,23 +224,6 @@ footer {
   width: min(90vw, 450px);
 }
 
-/* ===== PAGE SECTIONS ===== */
-
-
-/* ===== BUTTONS ===== */
-button {
-  padding: 10px 15px;
-  margin-top: 10px;
-  background-color: #260086; /* Dark purple */
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #125e66; /* Dark teal on hover */
-}
 
 /* ===== FORM FIELDS ===== */
 input, select, textarea {
@@ -371,8 +259,108 @@ td {
   font-weight: bold;
 }
 
+/* ===== PAGE SECTIONS ===== */
+.child-card {
+  background: var(--color-card);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  border: var(--border-card);
+  border-top: solid 1px var(--highlight);
+  box-shadow: var(--shadow);
+}
 
-/* ===== PRICING SECTION ===== */
+/* ===== Home PAGE ===== */
+
+/* Make the first card span two columns */
+#home-section > :nth-child(4) {
+  grid-area: 1 / 2 / 4 / 2;
+}
+/* #home-section > :nth-child(4) {
+  grid-column: 1 / span 2;
+} */
+
+#home-section {
+  margin-top: 1rem;
+  display: grid;
+  /* Two columns of equal width */
+  grid-template-columns: 1fr 1fr; 
+  grid-template-rows: .8fr .6fr .4fr;   
+  /* grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); */
+  width: 95%;
+  gap: 2rem;
+  padding: 1.5rem 2rem;
+  place-self: center;
+}
+
+#survey-intro p, #welcome-sec p, #home-service-div p, #application p{
+  margin-top: 10px;
+}
+
+
+#home-owner-div > :nth-child(1) {
+  grid-column: 1 / span 2;
+}
+#home-owner-div{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: .1fr 1fr;
+  gap: 1rem;
+  justify-content: center;
+}
+
+/* ===== PRICING PAGE ===== */
+#pricing-sec{  
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: .25fr .75fr; 
+  grid-template-rows: 1fr 1fr .5fr;  
+  gap: 1rem;
+}
+
+#faq-sec{  
+  padding: 1rem;
+  display: block; 
+}
+
+#pricing-form-div label {
+  display: block;
+  margin-top: 12px;
+  font-weight: 600;
+}
+
+.price-result {
+  display: block;
+  margin-top: 12px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1.05rem;
+  transition: transform var(--transition), box-shadow var(--transition), opacity var(--transition);
+  box-shadow: var(--shadow);
+}
+
+#price-result.success {
+  background: var(--color-bg);
+  color: var(--text-color);
+  border: none;
+  transform: translateY(0);
+  padding-left: 5px;
+  border-left: 4px solid var(--header-color);
+  background: linear-gradient(0deg, rgba(0, 255, 30, 0.04), rgba(102, 255, 0, 0.02));
+}
+
+#price-result.error {
+  background: linear-gradient(0deg, rgba(255,0,0,0.04), rgba(255,0,0,0.02));
+  color: var(--color-text);
+  border-left: 4px solid #ff4d4d;
+  padding-left: 5px;
+}
+
+/* Ensure there's clear space between the buttons and the result */
+#price-result {
+  margin-top: 1rem;
+}
+
 .pricing-container {
   display: flex;
   justify-content: space-between;
@@ -380,164 +368,59 @@ td {
   flex-wrap: wrap;
 }
 
-/* ===== LEFT & RIGHT PRICING BOXES ===== */
-.left-pricing, .right-pricing {
-  flex: 1;
-  min-width: 300px;
-  background-color: #fff0f5; /* Light pink */
-  border: 1px solid #6179ff; /* Blue border */
-  border-top: 3px solid #2bfef3; /* Teal top */
-  border-radius: 8px;
-  padding: 20px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+/* ===== SERVICE PAGE ===== */
+#service-body > :nth-child(1) {
+  grid-area: 1 / 1 / 1 / 3;
+}
+#service-body{  
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr; 
+  grid-template-rows: .25fr 1fr;  
+  gap: 1rem;
 }
 
-.left-pricing h2, .right-pricing h2 {
-  color: #008056;
-  margin-top: 0;
+/* ===== APPLICATION PAGE ===== */
+#app-section{
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
 }
-
-.left-pricing h3, .right-pricing h3 {
-  margin-top: 15px;
-  color: #730f91;
-}
-
-.left-pricing ul, .right-pricing ul, 
-.left-pricing li, .right-pricing li {
-  margin: 8px 0;
-  padding-left: 20px;
-}
-
-.left-pricing li, .right-pricing li {
-  list-style-type: disc;
-}
-
-/* ===== FIXED BOTTOM-RIGHT FORM ===== */
-.bottom-right-form {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: #fff0f5;
-  border: 1px solid #6179ff;
-  border-top: 3px solid #2bfef3;
-  border-radius: 8px;
-  padding: 20px;
-  width: 250px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
-  z-index: 1000;
-}
-
-.bottom-right-form label {
-  display: block;
+#application p{
   margin-top: 10px;
-  font-size: 14px;
 }
 
-.bottom-right-form button {
-  margin-top: 12px;
-  width: 100%;
-  padding: 8px;
-  background-color: #4CAF50; /* Green */
-  color: white;
-  border: none;
-  cursor: pointer;
+#application a{
+  color: var(--link-color);
 }
 
-.bottom-right-form button:hover {
-  background-color: #45a049;
+#application a:hover{
+  color: var(--link-color-hover);
+  text-decoration: underline;
 }
 
-.bottom-right-form h2 {
-  color: #008056;
+/* ===== EMERGENCY PAGE ===== */
+#emergency-section{
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  padding-left: 0px;
+  align-items: center;
 }
 
-
-
-/* ===== VERTICAL FORM TABLE STYLING ===== */
-.vertical-table {
-  width: 100%;
-  max-width: 600px;
-  margin: auto;
-  border-collapse: collapse;
+/* ===== QUALITY OF LIFE PAGE ===== */
+#quality-sec{
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
-
-.vertical-table td {
-  padding: 8px;
-  vertical-align: top;
-}
-
-.vertical-table label {
-  font-weight: bold;
-  display: block; /* Forces label on top */
-}
-
-.vertical-table input,
-.vertical-table select,
-.vertical-table textarea,
-.vertical-table button {
-  width: 100%;
-  padding: 8px;
-  font-size: 1em;
-  box-sizing: border-box;
-}
-
-.vertical-table textarea {
-  min-height: 80px;
-  resize: vertical;
-}
-
-.vertical-table button {
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-}
-
-.vertical-table button:hover {
-  background-color: #45a049;
-}
-
-.vertical-table select {
-  width: 100%;
-  padding: 8px;
-  font-size: 1em;
-  box-sizing: border-box;
-}
-
-/* ===== MOBILE CALCULATOR SIZE ADJUSTMENT ===== */
-@media (max-width: 600px) {
-  .bottom-right-form {
-    position: static;       /* Removes fixed position on mobile */
-    max-width: 90%;         /* Shrinks width */
-    margin: 20px auto;      /* Centers form */
-    padding: 10px;          /* Less padding */
-    font-size: 14px;        /* Smaller text */
-  }
-
-  .bottom-right-form input,
-  .bottom-right-form select,
-  .bottom-right-form button {
-    width: 100%;
-    font-size: 14px;
-  }
-
-  .bottom-right-form h2 {
-    font-size: 18px;
-  }
-
-  .bottom-right-form h3 {
-    font-size: 16px;
-  }
-}
-
-
 
 
 /* ===== NAVIGATION BAR ===== */
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
 
 .logo a{
   z-index: 11;
@@ -589,7 +472,49 @@ nav{
   font-size: 18px;
   color: var(--text-color);
 }
-.darkmode:hover, #nav-link:hover{
+
+.dropdown {
+  position: relative;
+  padding-bottom: 0;
+}
+
+.dropbtn::after {
+  content: '\25BE';
+  display: inline-block;
+  margin-left: 4px;
+  font-size: 1.2em;
+  transition: transform 0.3s ease;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: var(--color-nav-background);
+  z-index: 1;
+  top: 100%;
+  left: 0;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  min-width: 210px;
+  margin-top: 0;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 12px 16px;
+  margin: 5px;
+  text-align: left;
+}
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content{
+  display: block;
+}
+
+ .dropdown:hover .dropbtn::after{
+  transform: rotate(180deg);
+}
+
+.light-mode:hover, #nav-link:hover, .dropdown-content a:hover{
   background-color: var(--accent-color);
   scale: 1.05;
   transition: var(--transition);
@@ -602,10 +527,10 @@ nav svg{
   cursor: pointer;
 }
 
-/* .darkmode svg{
+/* .light-mode svg{
     fill: var(--color-text);
 } */
-.darkmode{
+.light-mode{
   margin-left: auto;
   padding: 10px;
   margin: 10px;
@@ -670,7 +595,7 @@ nav svg{
     z-index: 9;
   }
 
-  .owner, .main-section {
+  #home-owner-div, #home-section, #pricing-sec{
     margin-top: 1rem;
     display: flex;
     flex-direction: column;

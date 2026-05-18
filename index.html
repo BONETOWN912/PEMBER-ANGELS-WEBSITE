@@ -14,7 +14,10 @@
   <link rel="stylesheet" href="/styles/newstyles.css">
   
   <!-- External JavaScript file -->
-  <script src="/JS/the.js"></script>
+  <script src="/scripts/darkmode.js" defer></script>
+
+   <!-- Favicon for the website -->
+   <link rel="icon" type="image/jpg" href="/images/logo.jpg">
 
   <link rel="icon" type="image/jpg" href="/images/logo.jpg">
 </head>
@@ -49,12 +52,19 @@
     <!-- Navigation links -->
      <!-- TODO: fix this quality of life page to make it work. Low priority.  -->
     <!-- <a id="nav-link" href="/quality-of-life/">Quality of Life Survey</a> -->
-    <a id="nav-link" href="/services/">Services</a>
+    <div class="dropdown">
+      <a id="nav-link" href="#" class="dropbtn"> Pricing & Services </a>
+      <div class="dropdown-content">
+        <a href="/pricing/">Pricing</a>
+        <a href="/services/">Services</a>
+        <a href="/faqs/">FAQs</a>
+      </div>
+    </div>
     <a id="nav-link" href="/application/">Application</a>
     <a id="nav-link" href="/emergency/">Emergency Hospitals</a>
     </div>
 
-    <div class="darkmode">
+    <div class="light-mode">
       <input type="checkbox" id="darkmode-active">
       <label for="darkmode-active" class="darkmode-button">
         <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Zm0-80q88 0 158-48.5T740-375q-20 5-40 8t-40 3q-123 0-209.5-86.5T364-660q0-20 3-40t8-40q-78 32-126.5 102T200-480q0 116 82 198t198 82Zm-10-270Z"/></svg>
@@ -67,33 +77,33 @@
   </nav>
 
   <!-- Main home section -->
-  <section id="content-layout" class="main-section">
+  <section class="content-layout" id="home-section">
     <!-- Welcome text -->
-    <div class="welcome" id="child-card">
+    <div id="welcome-sec" class="child-card">
       <h2>In Home Pet Euthanasia</h2>
       <p>At Pember's Angels, we understand how difficult it is to say goodbye to a beloved pet. Our in-home euthanasia services are designed to provide a peaceful and compassionate farewell in the comfort of your own home. We believe in making this moment as comfortable as possible for your pets, allowing them to be surrounded by familiar sights, smells, and most importantly, their loving family.<br><br>
       Our experienced and empathetic team will guide you through the process and answer any questions you may have. We'll be there supporting you every step of the way and ensuring your pet's comfort and dignity are maintained throughout this process.</p>
       <div class="divider"></div>
-      <a href="/services" class="modern-btn">Contact</a>
+      <a href="/pricing" class="modern-btn">Get an estimate</a>
     </div>
     <!-- Layout container for content sections -->
     
     <!-- Service areas section -->
-    <div class="service" id="child-card">
+    <div id="home-service-div" class="child-card">
       <h2>Service Areas</h2>
       <p>We proudly serve the Westchester area, but we have extended our services to certain areas of the surrounding counties, including parts of Rockland, Putnam, and Orange. We are currently in the process of getting licenses for Connecticut.</p>
       <div class="divider"></div>
       <a href="/services" class="modern-btn">Services</a>
     </div>
     <!-- Emergency link section -->
-    <div class="service" id="child-card">
+    <div id="home-emergency-div" class="child-card">
       <h2>Emergency</h2>
       <p>If your pet is in need of immediate assistance, please go to your nearest animal emergency hospital.</p>
       <div class="divider"></div>
       <a href="/emergency" class="modern-btn">Emergency Hospitals</a>
     </div>
     <!-- Image section -->
-    <div class="owner" id="child-card">
+    <div id="home-owner-div" class="child-card">
       <h3>Dr. Pember and Roux</h3>    
       <img src="/images/self_portrait.jpg" alt="Dr Pember and his cat" width="300" height="500">
       <p>I am a graduate of the Long Island University College of Veterinary Medicine with extensive experience in emergency, specialty, and urgent care settings. Throughout my career, I have guided many families through complex medical diagnoses and difficult end-of-life decisions. This background instilled in me a profound appreciation for compassionate care and inspired my dedication to helping families provide a gentle, dignified, and peaceful transition for their beloved pets in the comfort of their own homes. Outside of my veterinary practice, I cherish time spent with my own orange feline companion, Roux.</p>

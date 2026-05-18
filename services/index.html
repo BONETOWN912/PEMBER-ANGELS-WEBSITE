@@ -12,14 +12,14 @@
   <link rel="stylesheet" href="/styles/newstyles.css">
 
   <!-- Link to external JavaScript -->
-  <script src="/JS/the.js"></script>
+  <script src="/scripts/darkmode.js" defer></script>
 
   <link rel="icon" type="image/jpg" href="/images/logo.jpg">
 
 </head>
 <body>
 
-  <!-- Navigation Bar -->
+   <!-- Navigation Bar -->
   <nav>
     
     
@@ -47,12 +47,19 @@
     
     <!-- Navigation links -->
     <!-- <a id="nav-link" href="/quality-of-life/">Quality of Life Survey</a> -->
-    <a id="nav-link" href="/services/">Services</a>
+    <div class="dropdown">
+      <a id="nav-link" href="#" class="dropbtn"> Pricing & Services <i class="fa fa-caret-down"></i> </a>
+      <div class="dropdown-content">
+        <a href="/pricing/">Pricing</a>
+        <a href="/services/">Services</a>
+        <a href="/faqs/">FAQs</a>
+      </div>
+    </div>
     <a id="nav-link" href="/application/">Application</a>
     <a id="nav-link" href="/emergency/">Emergency Hospitals</a>
     </div>
 
-    <div class="darkmode">
+    <div class="light-mode">
       <input type="checkbox" id="darkmode-active">
       <label for="darkmode-active" class="darkmode-button">
         <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Zm0-80q88 0 158-48.5T740-375q-20 5-40 8t-40 3q-123 0-209.5-86.5T364-660q0-20 3-40t8-40q-78 32-126.5 102T200-480q0 116 82 198t198 82Zm-10-270Z"/></svg>
@@ -64,15 +71,15 @@
     
   </nav>
 
-  <section class="service-body">
+  <section id="service-body">
 
     <!-- Introductory note for users -->
-    <div id="child-card" class="service-intro">
+    <div class="child-card" id="service-intro">
       <p>This price chart will provide you with information regarding the services you are interested in purchasing. Please indicate specifics under "Extra fees." You will need to add your pet's weight, type, and your preferences into the calculator. A 3% credit card surcharge fee will be included in the calculation.</p>
     </div>
   
   <!-- Left column: Euthanasia service prices -->
-  <div id="child-card"  class="left-pricing">
+  <div class="child-card"  id="left-pricing">
     <h2>Euthanasia Services</h2>
     <!-- Euthanasia price list -->
     <!-- <ul>
@@ -112,14 +119,11 @@
       <li>Orange - $110</li>
 
       <br>
-      <p>Note: If you live outside of these counties, please contact us for a quote.</p>
-      
+      <p>Note: If you live outside of these counties, please contact us for a quote.</p>    
   </div>
 
-
-
   <!-- Right column: Cremation service prices -->
-  <div  id="child-card"  class="right-pricing">
+  <div  class="child-card"  id="right-pricing">
     <h2>Aftercare services </h2>
     <p> Please consider what you would like to do with the remains prior to the Euthanasia appointment. You will need to tell the staff whether you wish to keep your pet’s body for burial or cremation or have us transport it for cremation with Final Gift.</p>
     <p>If you choose cremation with Final Gift, please go to their site to look at your options—click here: <a href="https://www.finalgift.com/memorial-products-new/">https://www.finalgift.com/</a>. In addition to cremation, they offer other services, including viewing and visitation, grief support resources, pet loss preplanning, memorial products, etc. We will help you set up an account with them when we arrive at your home.</p>
@@ -134,91 +138,9 @@
       <li>Rockland County: Rockland Pet Cemetery 845-634-2244 <a href="https://www.rocklandpetcemetery.com/"> https://www.rocklandpetcemetery.com/</a></li>
       <li>Orange County: Orange County Pet Cemetery 845-561-3800 <a href="https://orangecountypetcemetery.com/"> https://orangecountypetcemetery.com/</a></li>
     </ul>
-
-    <!-- Communal cremation price list -->
-    <!-- <h3>Communal</h3>
-    <ul>
-      <li>0-25 lbs: $100</li>
-      <li>26-50 lbs: $150</li>
-      <li>51-100 lbs: $200</li>
-      <li>101 lbs and above: $250</li>
-    </ul> -->
-
-    <!-- Private cremation price list -->
-    <!-- <h3>Private</h3>
-    <ul>
-      <li>0-10 lbs: $175</li>
-      <li>11-50 lbs: $200</li>
-      <li>51-80 lbs: $250</li>
-      <li>81-100 lbs: $300</li>
-      <li>101-150 lbs: $355</li>
-      <li>151+ lbs: $425</li>
-    </ul> -->
   </div>
 
 
-
-<!-- Form for calculating estimated total price -->
-<!-- <div class="bottom-right-form">
-  <h2>Estimated Total Price</h2>
-  <form id="estimateForm"> -->
-    <!-- Pet weight input -->
-    <!-- <label>Pet Weight (lbs):</label>
-    <input type="number" id="petWeight" required> -->
-
-    <!-- Pet type selection -->
-    <!-- <label>Pet Type:</label>
-    <select id="petType">
-      <option value="Select">Select</option>
-      <option value="cat">Cat</option>
-      <option value="small">Small Dog (0-30lbs)</option>
-      <option value="medium">Medium Dog (31-60lbs)</option>
-      <option value="large">Large Dog (61-99lbs)</option>
-      <option value="xlarge">X-Large Dog (100+lbs)</option>
-      <option value="behavioral">Behavioral Euthanasia</option>
-    </select> -->
-
-    <!-- Cremation preference selection -->
-    <!-- <label>Cremation remains removal:</label>
-    <select id="cremationRe">
-      <option value="Select">Select</option>
-      <option value="Westchester">Westchester</option>
-      <option value="Putnam">Putnam</option>
-      <option value="Rockland">Rockland</option>
-      <option value="Orange">Orange</option>
-      <option value="None">None</option>
-    </select> -->
-
-
-    <!-- Extra fees selection form -->
-    <!-- <h3>Extra Fees (check all that apply)</h3>
-<form id="extraFeesForm">
-  <label>
-    Weekend (50)<br>
-    <input type="checkbox" id="weekend">
-  </label>
-  
-  <label>
-    Holiday ($120)<br>
-    <input type="checkbox" id="holiday">
-  </label>
-  
-  <label>
-    Seen within 36 hours ($200)<br>
-    <input type="checkbox" id="rush">
-  </label>
-  
-  <label>
-    Aggressive Pet ($100)<br>
-    <input type="checkbox" id="aggressivePet">
-  </label>
-</form> -->
-
-    
-    <!-- Calculate button triggers calculateTotal() from JS -->
-    <!-- <button type="button" onclick="calculateTotal()">Calculate</button>
-  </form>
-</div> -->
 
 </section>
 <div class="divider"></div>

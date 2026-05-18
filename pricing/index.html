@@ -1,15 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Meta tags for responsive design and correct character encoding -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="UTF-8">
+
+  <!-- Page title -->
   <title>Pember's Angels</title>
+
+  <!-- Link to external stylesheet -->
   <link rel="stylesheet" href="/styles/newstyles.css">
+
+  <!-- Link to external JavaScript -->
   <script src="/scripts/darkmode.js" defer></script>
+  <script src="/scripts/calculatePrice.js" defer></script>
 
   <link rel="icon" type="image/jpg" href="/images/logo.jpg">
+
 </head>
 <body>
+
   <!-- Navigation Bar -->
   <nav>
     
@@ -62,96 +72,65 @@
     
   </nav>
 
-  <section class="content-layout" id="emergency-section">
+  <section id="pricing-sec">
+    <div id="pricing-form-div" class="child-card">
+      <h2>Pricing Estimate</h2>
+      <form id="pricing-form">
+        <h3>Pet Information</h3>  
+        <label for="pet-type">Pet Type:</label>
+        <select id="pet-type" name="pet-type" required>
+          <option value="">Select a pet type</option>
+          <option value="dog">Dog</option>
+          <option value="cat">Cat</option>
+          <option value="other">Other</option>
+        </select>
+        <!-- if not dog or cat, please contact us for a custom quote. -->
+        <label for="pet-weight">Pet Weight (lbs):</label>
+        <input type="number" id="pet-weight" placeholder="Weight in pounds (lbs)" min="0" max="200" required>
+        <h3>Aftercare</h3> 
+        <label for="pet-location">Location:</label> 
+        <select id="pet-location" name="pet-location" required>
+          <option value="">Select a location</option>
+          <option value="Westchester">Westchester NY</option>
+          <option value="Putnam">Putnam NY</option>
+          <option value="Rockland">Rockland NY</option>
+          <option value="Orange">Orange NY</option>
+          <option value="other">Other</option>
+          <!-- if not in these areas, please contact us for a custom quote. -->
+        </select>
+        <label for="pet-disposition">Final Disposition:</label>
+        <select id="pet-disposition" name="pet-disposition" required>
+          <option value="">Select a Final Disposition</option>
+          <option value="private_cremation">Private Cremation</option>
+          <option value="communal_cremation">Communal Cremation</option>
+          <option value="burial">Private Burial</option>
+        </select>
+        <button class="modern-btn" type="reset" onclick="resetTotal()">Reset</button>
+        <button class="modern-btn" id="calc-price" type="button" onclick="calculateTotal()" >Calculate Price</button>
+      </form>
+      <p id="price-result"></p>
+    </div>
 
-  <!-- Intra-page link to CT section -->
-
-  <div class="child-card" id="hostpitial-list">
-      <p>
-        It is not always possible to schedule at-home euthanasia. 
-        If your pet is in critical condition, please review this list of emergency hospitals to locate the one nearest to you.
-      </p>
-      <br>
-      <h2>Emergency Hospitals</h2>
-      <table>
-        <tr>
-          <th>Location</th>
-          <th>Name</th>
-          <th>Address</th>
-          <th>Phone</th>
-          <th>Website</th>
-        </tr>
-        <tr>
-          <td>Westchester, NY</td>
-          <td>Veterinary Emergency Group</td>
-          <td>201 Tarrytown Rd, White Plains, NY 10607</td>
-          <td><a href="tel:9149498779">914-949-8779</a></td>
-          <td><a href="https://www.veterinaryemergencygroup.com/locations/new-york/white-plains" target="_blank">Website Link</a></td>
-        </tr>
-        <tr>
-          <td>Westchester, NY</td>
-          <td>Katonah Bedford Veterinary Center</td>
-          <td>546 Bedford Rd, Bedford Hills, NY 10507</td>
-          <td><a href="tel:9142417700">914-241-7700</a></td>
-          <td><a href="https://vcahospitals.com/katonah-bedford" target="_blank">Website Link</a></td>
-        </tr>
-        <tr>
-          <td>Orange County, NY</td>
-          <td>Guardian Veterinary Emergency</td>
-          <td>517 NY-211, Middletown, NY 10941</td>
-          <td><a href="tel:8456920260">845-692-0260</a></td>
-          <td><a href="https://guardianvet-eroc.com/" target="_blank">Website Link</a></td>
-        </tr>
-        <tr>
-          <td>Putnam County, NY</td>
-          <td>Guardian Veterinary Specialists</td>
-          <td>4 Hardscrabble Heights, Brewster, NY 10509</td>
-          <td><a href="tel:9147043400">914-704-3400</a></td>
-          <td><a href="https://guardianveterinaryspecialists.com/" target="_blank">Website Link</a></td>
-        </tr>
-        <tr>
-          <td>Rockland, NY</td>
-          <td>Veterinary Emergency Group</td>
-          <td>123 E Route 59, Nanuet, NY 10954</td>
-          <td><a href="tel:8455365645">845-536-5645</a></td>
-          <td><a href="https://www.veterinaryemergencygroup.com/locations/new-york/nanuet" target="_blank">Website Link</a></td>
-        </tr>
-      <tr>
-        <td>Norwalk, CT</td>
-        <td>VCA Veterinary Referral and Emergency Center</td>
-        <td>123 W Cedar St, Norwalk, CT 06854</td>
-        <td><a href="tel:2038549960">203-854-9960</a></td>
-        <td><a href="https://vcahospitals.com/veterinary-referral-and-emergency-center" target="_blank">Website Link</a></td>
-      </tr>
-      <tr>
-        <td>Stamford, CT</td>
-        <td>Cornell University Veterinary Specialists</td>
-        <td>880 Canal St, Stamford, CT 06902</td>
-        <td><a href="tel:2035952777">203-595-2777</a></td>
-        <td><a href="https://www.cuvs.org/" target="_blank">Website  Link</a></td>
-      </tr>
-      
-      <tr>
-        <td>Cos Cob, CT</td>
-        <td>Veterinary Emergency Group</td>
-        <td>409 E Putnam Ave Unit 1, Cos Cob, CT 06830</td>
-        <td><a href="tel:2039096560">203-909-6560</a></td>
-        <td><a href="https://www.veterinaryemergencygroup.com/locations/connecticut/greenwich-cos-cob" target="_blank">Website Link</a></td>
-      </tr>
-    </table>
-  </div>
+    <div id="pricing-questions" class="child-card">
+      <h2>FAQs</h2>
+      <h3>Whats included in the cost?</h3>
+      <h3>Cremation options?</h3>
+      <h3>Cancellation policy?</h3>
+      <h3>Service Locations?</h3>
+      <div class="divider"></div>
+      <a href="/services" class="modern-btn">Contact</a>
+    </div>
 
 </section>
-
 <div class="divider"></div>
 <hr>
 <div class="divider"></div>
+
+
+<!-- Footer with contact information -->
 <footer>
     <p>Contact Dr. Pember at <a href="https://mail.google.com/mail/u/0/?ogbl#inbox?compose=CllgCJlFDPpTlqhsdtzxSNzGFDjvMfNFTdVknZVrKvkvdqFkmPWxKsfTFbmCHbBDmqNbKxfxptg" target="_blank">pembersangels@gmail.com</a></p>
 </footer>
 
 </body>
 </html>
-
-
-<!-- TODO: enable scrolling on tables when window is to small -->

@@ -3,6 +3,7 @@ const priceResult = document.getElementById('price-result');
 
 function resetTotal() {
     priceResult.textContent = "";
+    priceResult.classList.remove('error', 'success');
 }
 
 // Function to calculate total price based on form inputs
@@ -27,7 +28,9 @@ function calculateTotal() {
     }
     if (errorString !== "") {
         console.log("Error calculating price:", errorString);
-        priceResult.textContent = errorString;
+        priceResult.innerText = errorString;
+        priceResult.classList.remove('success');
+        priceResult.classList.add('error');
         return;
     }
     let cost = 0
@@ -48,6 +51,12 @@ function calculateTotal() {
             } else {
                 cost += 550; // For dogs over 200 lbs or with aggressive behavior
             }
+            break;
+        case "other":
+            priceResult.textContent = "Please contact us for a custom quote for pets other than cats and dogs.";
+            priceResult.classList.remove('success');
+            priceResult.classList.add('error');
+            return
     }
     switch (petDisposition) {
         case "private_cremation":
@@ -67,6 +76,8 @@ function calculateTotal() {
                     break;
                 case "other":
                     priceResult.textContent = "Please contact us for a custom quote for locations outside of Westchester, Putnam, Rockland, and Orange counties.";
+                    priceResult.classList.remove('success');
+                    priceResult.classList.add('error');
                     return
             }
             break;  
@@ -78,4 +89,6 @@ function calculateTotal() {
             break;
     }
     priceResult.textContent = `Estimated Price: $${cost.toFixed(2)}`;
+    priceResult.classList.remove('error');
+    priceResult.classList.add('success');
 }
